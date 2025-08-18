@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
+import { Navbar } from './components/navbar/navbar';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   template: `
+    <app-navbar />
     <main class="container mx-auto">
-      <h1>Applied Angular</h1>
+      <router-outlet />
     </main>
   `,
   styles: [],
-  imports: [],
+  imports: [Navbar, RouterOutlet],
 })
 export class App {}
