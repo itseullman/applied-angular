@@ -1,10 +1,12 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NavList } from './nav-list';
+import { NavHorizontalList } from './nav-horizontal-list';
 
 @Component({
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NavList],
+  imports: [RouterLink, NavList, NavHorizontalList],
   template: `
     <div class="navbar bg-base-100 shadow-sm">
       <div class="navbar-start">
@@ -25,6 +27,7 @@ import { NavList } from './nav-list';
               />
             </svg>
           </div>
+
           <ul
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
@@ -32,12 +35,10 @@ import { NavList } from './nav-list';
             <app-nav-list [links]="links()" />
           </ul>
         </div>
-        <a class="btn btn-ghost text-xl">Applied Angular</a>
+        <a routerLink="home" class="btn btn-ghost text-xl">Applied Angular</a>
       </div>
       <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal px-1">
-          <app-nav-list [links]="links()" />
-        </ul>
+        <app-nav-horizontal-list [links]="links()" />
       </div>
       <div class="navbar-end">
         <a class="btn">Button</a>
@@ -59,6 +60,10 @@ export class Navbar {
     {
       text: 'About',
       href: '/about',
+    },
+    {
+      text: 'Articles',
+      href: '/articles',
     },
   ]);
 }

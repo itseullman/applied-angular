@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -15,6 +15,7 @@ import { RouterLink } from '@angular/router';
   styles: ``,
 })
 export class NavList {
-  //input
+  // input
+
   links = input.required<{ text: string; href: string }[]>();
 }
