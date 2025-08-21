@@ -4,9 +4,8 @@ import {
   computed,
   inject,
   resource,
-  signal,
 } from '@angular/core';
-import { ApiArticleItem, ApiArticles, ArticleSortOptions } from '../types';
+import { ApiArticleItem, ApiArticles } from '../types';
 import { ArticleListItem } from '../components/article-list-item';
 import { ListSortPrefs } from '../components/list-sort-prefs';
 import { ArticlesStore } from '../stores/articles-store';
